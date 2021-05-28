@@ -13,6 +13,15 @@
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
+    <!-- Distribution management-->
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub QuillDev Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/QuillDev/StratumCommon</url>
+        </repository>
+    </distributionManagement>
+
     <repositories>
         <repository>
             <id>papermc</id>
