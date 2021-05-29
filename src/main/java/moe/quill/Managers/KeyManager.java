@@ -2,6 +2,7 @@ package moe.quill.Managers;
 
 import moe.quill.Annotations.IgnoreDynamicLoading;
 import moe.quill.Annotations.Keyable;
+import moe.quill.PackageUtils;
 import org.bukkit.NamespacedKey;
 import org.bukkit.plugin.Plugin;
 import org.reflections.Reflections;
@@ -12,11 +13,20 @@ import java.util.HashMap;
 public class KeyManager {
 
     private final Reflections reflections;
+    private final Plugin plugin;
     private final HashMap<String, NamespacedKey> keys = new HashMap<>();
 
     public KeyManager(Plugin plugin, String packageString) {
-
         this.reflections = new Reflections(packageString);
+        this.plugin = plugin;
+        doReflection();
+    }
+
+    public KeyManager(Plugin plugin) {
+        this(plugin, PackageUtils.getCutPackageFromClass(plugin.getClass()));
+    }
+
+    private void doReflection() {
         reflections
                 .getTypesAnnotatedWith(Keyable.class)
                 .stream()
