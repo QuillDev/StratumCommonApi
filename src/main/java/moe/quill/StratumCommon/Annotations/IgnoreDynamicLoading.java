@@ -1,4 +1,4 @@
-package moe.quill.Annotations;
+package moe.quill.StratumCommon.Annotations;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

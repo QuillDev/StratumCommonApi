@@ -1,4 +1,4 @@
-package moe.quill;
+package moe.quill.StratumCommon;
 
 import java.util.Arrays;
 
