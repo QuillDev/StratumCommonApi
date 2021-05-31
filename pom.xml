@@ -5,10 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>moe.quill</groupId>
-    <artifactId>stratum-common</artifactId>
+    <artifactId>stratum-common-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
+    <name>stratum-common-api</name>
+
     <properties>
+        <java.version>11</java.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
@@ -40,11 +43,6 @@
             <groupId>org.reflections</groupId>
             <artifactId>reflections</artifactId>
             <version>0.9.12</version>
-        </dependency>
-        <dependency>
-            <groupId>com.esotericsoftware</groupId>
-            <artifactId>kryo</artifactId>
-            <version>5.1.1</version>
         </dependency>
     </dependencies>
 
