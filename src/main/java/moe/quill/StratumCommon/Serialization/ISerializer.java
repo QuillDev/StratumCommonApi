@@ -1,15 +1,11 @@
 package moe.quill.StratumCommon.Serialization;
 
-import com.esotericsoftware.kryo.io.Input;
-import com.esotericsoftware.kryo.io.Output;
 import net.kyori.adventure.text.Component;
-import org.apache.commons.lang.SerializationUtils;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
-public interface StratumSerializer {
+public interface ISerializer {
 
     //Item lists
     byte[] serializeItemList(ArrayList<ItemStack> itemStacks);

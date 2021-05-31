@@ -21,7 +21,7 @@
         <repository>
             <id>github</id>
             <name>GitHub QuillDev Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/QuillDev/StratumCommon</url>
+            <url>https://maven.pkg.github.com/QuillDev/StratumCommonApi</url>
         </repository>
     </distributionManagement>
 
