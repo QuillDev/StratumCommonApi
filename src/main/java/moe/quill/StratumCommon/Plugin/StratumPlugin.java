@@ -1,8 +1,10 @@
 package moe.quill.StratumCommon.Plugin;
 
+import moe.quill.StratumCommon.Commands.StratumCommand;
 import moe.quill.StratumCommon.Database.IDatabaseService;
 import moe.quill.StratumCommon.KeyManager.IKeyManager;
 import moe.quill.StratumCommon.Serialization.ISerializer;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.slf4j.Logger;
@@ -61,6 +63,39 @@ public class StratumPlugin extends JavaPlugin {
             serializer = serializerRegistration.getProvider();
         }
 
+    }
+
+    /**
+     * Register any given commands to the server
+     *
+     * @param commands to register with the server
+     */
+    public void registerCommand(StratumCommand... commands) {
+        for (final var command : commands) {
+            final var pluginCommand = getCommand(command.getName());
+
+            //If the command does not exist log it
+            if (pluginCommand == null) {
+                logger.warn(String.format("Could not find a command with the name '%s'", command.getName()));
+                continue;
+            }
+
+            //Set the executor of the command
+            pluginCommand.setExecutor(command.getExecutor());
+            if (command.getTabCompleter() == null) continue; // if this command has no tab completer, return null
+            pluginCommand.setTabCompleter(command.getTabCompleter());
+        }
+    }
+
+    /**
+     * Register any given event
+     *
+     * @param events to register with the server
+     */
+    public void registerEvent(Listener... events) {
+        for (final var event : events) {
+            pluginManager.registerEvents(event, this);
+        }
     }
 
     /**

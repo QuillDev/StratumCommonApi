@@ -1,9 +1,11 @@
 package moe.quill.StratumCommon.Database;
 
 import moe.quill.StratumCommon.Database.DataTypes.MarketData;
+import moe.quill.StratumCommon.Database.DataTypes.RPGPlayer;
 import org.bukkit.Material;
 
 import java.util.Collection;
+import java.util.UUID;
 
 public interface IDatabaseService {
 
@@ -35,6 +37,35 @@ public interface IDatabaseService {
      * @param marketData to create new data for
      */
     void createMarketData(MarketData marketData);
+
+    /**
+     * Get
+     *
+     * @param uuid of the player to get
+     * @return the player
+     */
+    RPGPlayer getPlayer(UUID uuid);
+
+    /**
+     * Save a single instance of market data
+     *
+     * @param player to save
+     */
+    void savePlayer(RPGPlayer player);
+
+    /**
+     * Save a list of market data items
+     *
+     * @param playerList to save
+     */
+    void savePlayer(Collection<RPGPlayer> playerList);
+
+    /**
+     * Create a new piece of market data
+     *
+     * @param uuid to create new data for
+     */
+    void createPlayer(UUID uuid);
 
     /**
      * Forces a sql database connection if one does not exist
