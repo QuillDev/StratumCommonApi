@@ -1,4 +1,4 @@
-package moe.quill.StratumCommon.Serialization;
+package moe.quill.StratumCommonApi.Serialization;
 
 import net.kyori.adventure.text.Component;
 import org.bukkit.inventory.ItemStack;

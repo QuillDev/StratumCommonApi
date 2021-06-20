@@ -6,7 +6,7 @@
 
     <groupId>moe.quill</groupId>
     <artifactId>stratum-common-api</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
 
     <name>stratum-common-api</name>
 
@@ -44,11 +44,7 @@
             <artifactId>reflections</artifactId>
             <version>0.9.12</version>
         </dependency>
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver-sync</artifactId>
-            <version>4.3.0-beta1</version>
-        </dependency>
+
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>

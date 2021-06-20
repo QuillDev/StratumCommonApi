@@ -1,4 +1,4 @@
-package moe.quill.StratumCommon.KeyManager;
+package moe.quill.StratumCommonApi.KeyManager;
 
 import org.bukkit.NamespacedKey;
 import org.bukkit.plugin.Plugin;

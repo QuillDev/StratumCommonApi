@@ -1,4 +1,4 @@
-package moe.quill.StratumCommon.Database.DataTypes;
+package moe.quill.StratumCommonApi.Database.DataTypes;
 
 import java.util.UUID;
 

@@ -1,9 +1,9 @@
-package moe.quill.StratumCommon.Plugin;
+package moe.quill.StratumCommonApi.Plugin;
 
-import moe.quill.StratumCommon.Commands.StratumCommand;
-import moe.quill.StratumCommon.Database.IDatabaseService;
-import moe.quill.StratumCommon.KeyManager.IKeyManager;
-import moe.quill.StratumCommon.Serialization.ISerializer;
+import moe.quill.StratumCommonApi.Commands.StratumCommand;
+import moe.quill.StratumCommonApi.Database.IDatabaseService;
+import moe.quill.StratumCommonApi.KeyManager.IKeyManager;
+import moe.quill.StratumCommonApi.Serialization.ISerializer;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -37,7 +37,7 @@ public class StratumPlugin extends JavaPlugin {
         if (stratumConfig.isUseDatabase()) {
             final var dbRegistration = servicesManager.getRegistration(IDatabaseService.class);
             if (dbRegistration == null) {
-                logger.error(String.format("Unable to find the database manager! [%s]", IDatabaseService.class.getName()));
+                logger.error(String.format("Unable to find the database manager! [%s]", IDatabaseService.class.hashCode()));
                 pluginManager.disablePlugin(this, true);
                 return;
             }
@@ -48,7 +48,7 @@ public class StratumPlugin extends JavaPlugin {
         if (stratumConfig.isUseKeyManager()) {
             final var keyRegistration = servicesManager.getRegistration(IKeyManager.class);
             if (keyRegistration == null) {
-                logger.error(String.format("Unable to find the key manager! [%s]", IKeyManager.class.getName()));
+                logger.error(String.format("Unable to find the key manager! [%s]", IKeyManager.class.hashCode()));
                 pluginManager.disablePlugin(this, true);
                 return;
             }
@@ -59,7 +59,7 @@ public class StratumPlugin extends JavaPlugin {
         if (stratumConfig.isUseSerialization()) {
             final var serializerRegistration = servicesManager.getRegistration(ISerializer.class);
             if (serializerRegistration == null) {
-                logger.error(String.format("Unable to find the key serializer! [%s]", ISerializer.class.getName()));
+                logger.error(String.format("Unable to find the key serializer! [%s]", ISerializer.class.hashCode()));
                 pluginManager.disablePlugin(this, true);
                 return;
             }

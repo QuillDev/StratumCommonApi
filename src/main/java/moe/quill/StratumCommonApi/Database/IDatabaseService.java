@@ -1,7 +1,7 @@
-package moe.quill.StratumCommon.Database;
+package moe.quill.StratumCommonApi.Database;
 
-import moe.quill.StratumCommon.Database.DataTypes.MarketData;
-import moe.quill.StratumCommon.Database.DataTypes.RPGPlayer;
+import moe.quill.StratumCommonApi.Database.DataTypes.MarketData;
+import moe.quill.StratumCommonApi.Database.DataTypes.RPGPlayer;
 import org.bukkit.Material;
 
 import java.util.Collection;

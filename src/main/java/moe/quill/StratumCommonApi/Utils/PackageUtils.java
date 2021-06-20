@@ -1,4 +1,4 @@
-package moe.quill.StratumCommon.Utils;
+package moe.quill.StratumCommonApi.Utils;
 
 public class PackageUtils {
     public static String getReflectivePackageName(Class<?> queryClass) {

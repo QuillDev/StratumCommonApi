@@ -1,4 +1,4 @@
-package moe.quill.StratumCommon.Plugin;
+package moe.quill.StratumCommonApi.Plugin;
 
 public class StratumConfigBuilder {
 
