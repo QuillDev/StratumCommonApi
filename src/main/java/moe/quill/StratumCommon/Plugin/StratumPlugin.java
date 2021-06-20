@@ -28,15 +28,16 @@ public class StratumPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        super.onEnable();
 
         //Try to get any services we may need
         final var servicesManager = getServer().getServicesManager();
+
 
         //Get the database if we require it
         if (stratumConfig.isUseDatabase()) {
             final var dbRegistration = servicesManager.getRegistration(IDatabaseService.class);
             if (dbRegistration == null) {
+                logger.error(String.format("Unable to find the database manager! [%s]", IDatabaseService.class.getName()));
                 pluginManager.disablePlugin(this, true);
                 return;
             }
@@ -47,6 +48,7 @@ public class StratumPlugin extends JavaPlugin {
         if (stratumConfig.isUseKeyManager()) {
             final var keyRegistration = servicesManager.getRegistration(IKeyManager.class);
             if (keyRegistration == null) {
+                logger.error(String.format("Unable to find the key manager! [%s]", IKeyManager.class.getName()));
                 pluginManager.disablePlugin(this, true);
                 return;
             }
@@ -57,6 +59,7 @@ public class StratumPlugin extends JavaPlugin {
         if (stratumConfig.isUseSerialization()) {
             final var serializerRegistration = servicesManager.getRegistration(ISerializer.class);
             if (serializerRegistration == null) {
+                logger.error(String.format("Unable to find the key serializer! [%s]", ISerializer.class.getName()));
                 pluginManager.disablePlugin(this, true);
                 return;
             }

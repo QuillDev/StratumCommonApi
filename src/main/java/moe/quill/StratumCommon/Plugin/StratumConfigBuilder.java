@@ -2,9 +2,9 @@ package moe.quill.StratumCommon.Plugin;
 
 public class StratumConfigBuilder {
 
-    private boolean useDatabase;
-    private boolean useKeyManager;
-    private boolean useSerialization;
+    private boolean useDatabase = false;
+    private boolean useKeyManager = false;
+    private boolean useSerialization = false;
 
     public StratumConfigBuilder setUseDatabase(boolean useDatabase) {
         this.useDatabase = useDatabase;
