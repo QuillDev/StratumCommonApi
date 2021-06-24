@@ -164,4 +164,5 @@ public class RPGPlayer {
     public void setArcheryExperience(float archeryExperience) {
         this.archeryExperience = archeryExperience;
     }
+    
 }
